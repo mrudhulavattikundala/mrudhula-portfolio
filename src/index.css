@@ -1,19 +1,18 @@
-/* src/index.css - Modern Dark Mode Palette */
+/* src/index.css - High-Contrast Professional Light Mode */
 
-/* 1. Global Reset and Variables */
 :root {
-  /* New Professional Dark Palette */
-  --bg-color: #1E202A;      /* Deep Background */
-  --surface-color: #2A2D3A; /* Card/Component Surface */
-  --primary-color: #4CAF50; /* Vibrant Green Accent (Code/Success) */
-  --text-color: #E0E0E0;    /* Soft White Text */
-  --secondary-text: #B0BEC5; /* Muted Secondary Text */
+  /* New Professional Light Palette */
+  --bg-color: #FFFFFF;      /* Pure White Background */
+  --surface-color: #F8F9FA; /* Off-White for Cards/Surfaces */
+  --primary-color: #007bff; /* Deep Blue Accent (Modern and Trustworthy) */
+  --text-color: #212529;    /* Dark Black/Navy Text */
+  --secondary-text: #6c757d; /* Muted Gray Secondary Text */
   
-  --font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family: 'Helvetica Neue', Arial, sans-serif; /* Clean, modern font */
   --max-width: 1200px;
 }
 
-/* 2. Base Styles */
+/* Base Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,7 +24,7 @@ body {
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--bg-color);
-  padding-top: 80px; /* Space for the fixed header */
+  padding-top: 70px; /* Space for the fixed header */
 }
 
 a {
@@ -35,7 +34,7 @@ a {
 }
 
 a:hover {
-  color: #81C784; /* Lighter green on hover */
+  color: #0056b3; 
 }
 
 ul {

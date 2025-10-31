@@ -1,4 +1,4 @@
-/* src/App.css - Dashboard Layout and Elevated Cards */
+/* src/App.css - Clean Layout and Strong Typography */
 
 .portfolio-app {
   display: flex;
@@ -12,159 +12,125 @@ main {
 
 /* --- Section Layouts & Containers --- */
 section, .contact-section {
-  padding: 60px 20px;
-  max-width: var(--max-width);
+  padding: 80px 20px;
+  max-width: 1000px; /* Keeps content centered and readable */
   margin: 0 auto;
-  min-height: 400px; /* Ensures sections have visible height */
 }
 
 section h2, .contact-section h2 {
-  text-align: center;
-  font-size: 3em;
+  text-align: left;
+  font-size: 2.8em;
+  font-weight: 700;
   color: var(--primary-color);
   margin-bottom: 50px;
-  position: relative;
-}
-
-section h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: var(--primary-color);
-    margin: 10px auto 0;
-    border-radius: 2px;
+  /* Adds a strong separator line under the title */
+  border-bottom: 3px solid var(--primary-color); 
+  display: inline-block; 
+  padding-bottom: 5px;
 }
 
 
 /* --- Header (Sticky Navbar) --- */
 .header-section {
-  background-color: var(--surface-color);
-  color: var(--light-text);
+  background-color: var(--bg-color);
+  border-bottom: 1px solid #dee2e6; /* Light separator */
   padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   
-  /* Sticky properties */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
 }
 
 .header-section h1 {
-  font-size: 1.5em;
-  font-weight: 700;
+  font-size: 1.6em;
+  font-weight: 800;
   color: var(--text-color);
 }
 
 .main-nav ul {
   display: flex;
-  gap: 25px;
-}
-
-.main-nav a {
-  color: var(--text-color);
-  font-weight: 500;
-  padding: 5px 10px;
-  border-radius: 4px;
+  gap: 35px;
 }
 
 .main-nav a:hover {
-  background-color: rgba(76, 175, 80, 0.2); /* Soft hover background */
   color: var(--primary-color);
 }
 
-.contact-info-header a {
+.contact-info-header {
+    display: flex;
+    gap: 15px;
+    align-items: center;
     font-size: 0.9em;
-    padding: 5px 10px;
-    border: 1px solid var(--primary-color);
-    border-radius: 4px;
-    margin-left: 10px;
-}
-.contact-info-header .phone-number {
-    color: var(--secondary-text);
 }
 
 
-/* --- Skills & Projects (Dashboard Card Look) --- */
-
-/* Skills Group Layout */
-.skills-section h3 {
-    color: var(--primary-color);
-    margin-top: 15px;
-    margin-bottom: 5px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #4A4A4A;
-}
-
-.skills-group {
-    background-color: var(--surface-color);
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Elevated shadow */
-    margin-bottom: 25px;
-}
-
-.skills-section .skills-group {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 0;
-    background-color: transparent; /* Remove background from container */
-    box-shadow: none;
-}
-
-/* Projects Card Layout */
-.projects-section .project-card {
+/* --- Skills & Projects (Clean Card Look) --- */
+.skills-section .skills-group, .project-card {
     background-color: var(--surface-color);
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); /* Very soft shadow */
     margin-bottom: 30px;
-    border-left: 5px solid var(--primary-color);
+    border-left: 4px solid var(--primary-color); /* Strong accent line */
+}
+
+.skills-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.skills-group ul {
+    padding-left: 20px;
+    list-style-type: '▪ ';
 }
 
 .project-card h3 {
-  color: var(--primary-color);
-  margin-bottom: 10px;
-  font-size: 1.8em;
+  color: var(--text-color);
+  margin-bottom: 5px;
+  font-size: 1.6em;
+  font-weight: 600;
 }
 
-.project-card ul {
-    padding-left: 20px;
-    list-style-type: '— '; /* Custom bullet */
+.project-card .project-tech {
+    color: var(--secondary-text);
+    margin-bottom: 15px;
+    font-style: italic;
 }
 
-/* --- Footer --- */
+
+/* --- Footer & Contact --- */
+.contact-section {
+    background-color: var(--surface-color);
+    border-top: 1px solid #dee2e6;
+    text-align: center;
+    padding: 60px 20px;
+}
+
 .footer-section {
-  background-color: #111; /* Even darker footer */
-  color: var(--secondary-text);
+  background-color: var(--text-color);
+  color: var(--surface-color);
   text-align: center;
-  padding: 25px;
-  margin-top: auto;
-  font-size: 0.9em;
+  padding: 20px;
+  font-size: 0.85em;
 }
+
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
   .header-section {
     flex-direction: column;
-    text-align: center;
     padding: 15px 20px;
-    position: static; /* Unstick on mobile */
+    position: static;
   }
   
   body {
-    padding-top: 0; /* Remove header padding on mobile */
-  }
-
-  .main-nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 10px;
+    padding-top: 0;
   }
 }
