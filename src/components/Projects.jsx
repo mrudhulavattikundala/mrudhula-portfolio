@@ -11,7 +11,7 @@ function Projects() {
         <p className="project-date">June 2025</p>
         <p className="project-tech">MERN Stack - Real-time task app with secure login</p>
         <ul>
-          <li>Built a full-stack application with MongoDB, Express.js, **React.js**, and **Node.js**</li>
+          <li>Built a full-stack application with MongoDB, Express.js, React.js, and Node.js</li>
           <li>Added real-time task updates and gamified progress tracking to enhance productivity</li>
           {/* Add a placeholder for your live link and GitHub link here when available */}
           <li><a href="[Your Live Demo Link]">View Live</a> | <a href="[Your GitHub Repo Link]">GitHub Code</a></li>

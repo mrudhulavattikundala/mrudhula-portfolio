@@ -1,15 +1,15 @@
-/* src/index.css - High-Contrast Professional Light Mode */
+/* src/index.css - The Clean Blueprint Theme */
 
 :root {
-  /* New Professional Light Palette */
-  --bg-color: #FFFFFF;      /* Pure White Background */
-  --surface-color: #F8F9FA; /* Off-White for Cards/Surfaces */
-  --primary-color: #007bff; /* Deep Blue Accent (Modern and Trustworthy) */
-  --text-color: #212529;    /* Dark Black/Navy Text */
-  --secondary-text: #6c757d; /* Muted Gray Secondary Text */
+  /* Final High-Contrast Minimal Palette */
+  --bg-color: #F9F9F9;      /* Soft Off-White Background */
+  --surface-color: #FFFFFF; /* Pure White Card Surfaces */
+  --primary-color: #1D3557; /* Deep Navy Blue Accent (Strongest Professional Color) */
+  --text-color: #333333;    /* Dark Charcoal Text for main headings/content */
+  --secondary-text: #718096; /* Muted Gray for dates/details */
   
-  --font-family: 'Helvetica Neue', Arial, sans-serif; /* Clean, modern font */
-  --max-width: 1200px;
+  --font-family: 'Roboto', 'Inter', sans-serif; 
+  --max-width: 1000px;
 }
 
 /* Base Styles */
@@ -34,7 +34,7 @@ a {
 }
 
 a:hover {
-  color: #0056b3; 
+  color: #1a2f4d; 
 }
 
 ul {

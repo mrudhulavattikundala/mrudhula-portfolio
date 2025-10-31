@@ -8,10 +8,10 @@ function About() {
       
       <div className="career-objective">
         <p>
-          B.Tech Computer Science and Engineering student with a strong academic foundation[cite: 9].
-          Seeking a challenging role to apply my skills in programming, problem-solving, and software development[cite: 10].
-          Eager to learn new technologies and contribute to real-world projects[cite: 11].
-          Aiming to grow professionally while adding value to the organization[cite: 11].
+          B.Tech Computer Science and Engineering student with a strong academic foundation.
+          Seeking a challenging role to apply my skills in programming, problem-solving, and software development
+          Eager to learn new technologies and contribute to real-world projects.
+          Aiming to grow professionally while adding value to the organization.
         </p>
       </div>
 

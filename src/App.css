@@ -1,4 +1,4 @@
-/* src/App.css - Clean Layout and Strong Typography */
+/* src/App.css - High-Quality Structure and Layout */
 
 .portfolio-app {
   display: flex;
@@ -10,30 +10,31 @@ main {
   flex-grow: 1;
 }
 
-/* --- Section Layouts & Containers --- */
+/* --- Section Containers (Good Structure) --- */
 section, .contact-section {
   padding: 80px 20px;
-  max-width: 1000px; /* Keeps content centered and readable */
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 
+/* Titles: Clear, left-aligned, and strongly defined */
 section h2, .contact-section h2 {
   text-align: left;
-  font-size: 2.8em;
+  font-size: 2.5em;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--text-color);
   margin-bottom: 50px;
-  /* Adds a strong separator line under the title */
-  border-bottom: 3px solid var(--primary-color); 
+  /* Strong accent line defines the section */
+  border-bottom: 4px solid var(--primary-color); 
   display: inline-block; 
   padding-bottom: 5px;
 }
 
 
-/* --- Header (Sticky Navbar) --- */
+/* --- Header (Fixed Navigation) --- */
 .header-section {
-  background-color: var(--bg-color);
-  border-bottom: 1px solid #dee2e6; /* Light separator */
+  background-color: var(--surface-color);
+  border-bottom: 1px solid #E0E0E0;
   padding: 15px 40px;
   display: flex;
   justify-content: space-between;
@@ -44,58 +45,74 @@ section h2, .contact-section h2 {
   left: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
 }
 
 .header-section h1 {
   font-size: 1.6em;
   font-weight: 800;
-  color: var(--text-color);
+  color: var(--primary-color);
 }
 
 .main-nav ul {
   display: flex;
-  gap: 35px;
+  gap: 30px;
 }
 
-.main-nav a:hover {
-  color: var(--primary-color);
-}
-
-.contact-info-header {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    font-size: 0.9em;
+/* --- About Section Formatting --- */
+.education-item {
+    padding: 15px 0;
+    border-bottom: 1px dashed #E0E0E0;
+    margin-bottom: 10px;
 }
 
 
-/* --- Skills & Projects (Clean Card Look) --- */
-.skills-section .skills-group, .project-card {
+/* --- Skills (Best Structure: Grid Layout) --- */
+.skills-group-container {
+    /* Use CSS Grid to organize skills into a clean, two-column layout */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+}
+
+.skills-group {
     background-color: var(--surface-color);
-    padding: 30px;
-    border-radius: 6px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); /* Very soft shadow */
-    margin-bottom: 30px;
-    border-left: 4px solid var(--primary-color); /* Strong accent line */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Clean definition */
+    border-top: 4px solid var(--primary-color); /* Section accent */
 }
 
-.skills-section h3 {
+.skills-group h3 {
     color: var(--primary-color);
     margin-bottom: 15px;
     font-size: 1.4em;
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 5px;
 }
 
 .skills-group ul {
     padding-left: 20px;
-    list-style-type: '▪ ';
+    list-style-type: '» ';
+    color: var(--secondary-text);
+}
+
+
+/* --- Projects (Elevated Cards) --- */
+.project-card {
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
+    margin-bottom: 35px;
+    border-left: 5px solid var(--primary-color); /* Side accent */
 }
 
 .project-card h3 {
   color: var(--text-color);
   margin-bottom: 5px;
   font-size: 1.6em;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .project-card .project-tech {
@@ -105,19 +122,13 @@ section h2, .contact-section h2 {
 }
 
 
-/* --- Footer & Contact --- */
-.contact-section {
-    background-color: var(--surface-color);
-    border-top: 1px solid #dee2e6;
-    text-align: center;
-    padding: 60px 20px;
-}
-
+/* --- Footer --- */
 .footer-section {
-  background-color: var(--text-color);
-  color: var(--surface-color);
+  background-color: var(--surface-color);
+  border-top: 1px solid #E0E0E0;
+  color: var(--secondary-text);
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   font-size: 0.85em;
 }
 
@@ -132,5 +143,8 @@ section h2, .contact-section h2 {
   
   body {
     padding-top: 0;
+  }
+  .skills-group-container {
+    grid-template-columns: 1fr; /* Stack skills vertically on small screens */
   }
 }
