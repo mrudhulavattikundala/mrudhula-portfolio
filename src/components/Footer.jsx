@@ -5,7 +5,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="footer-section">
-      <p>&copy; {currentYear} Mrudhula Vattikundala</p>
+      <p>&copy; {2025} Mrudhula Vattikundala</p>
       <p>All rights reserved.</p>
     </footer>
   );

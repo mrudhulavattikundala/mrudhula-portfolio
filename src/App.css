@@ -1,4 +1,4 @@
-/* src/App.css - High-Quality Structure and Layout */
+/* src/App.css */
 
 .portfolio-app {
   display: flex;
@@ -10,48 +10,35 @@ main {
   flex-grow: 1;
 }
 
-/* --- Section Containers (Good Structure) --- */
+/* --- Section Layouts --- */
 section, .contact-section {
-  padding: 80px 20px;
+  padding: 40px 20px;
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
-/* Titles: Clear, left-aligned, and strongly defined */
 section h2, .contact-section h2 {
-  text-align: left;
+  text-align: center;
   font-size: 2.5em;
-  font-weight: 700;
-  color: var(--text-color);
-  margin-bottom: 50px;
-  /* Strong accent line defines the section */
-  border-bottom: 4px solid var(--primary-color); 
-  display: inline-block; 
-  padding-bottom: 5px;
+  color: var(--primary-color);
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
 }
 
-
-/* --- Header (Fixed Navigation) --- */
+/* --- Header & Navigation --- */
 .header-section {
-  background-color: var(--surface-color);
-  border-bottom: 1px solid #E0E0E0;
-  padding: 15px 40px;
+  background-color: var(--text-color);
+  color: var(--light-text);
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
 }
 
 .header-section h1 {
-  font-size: 1.6em;
-  font-weight: 800;
-  color: var(--primary-color);
+  font-size: 1.8em;
+  font-weight: 600;
 }
 
 .main-nav ul {
@@ -59,92 +46,76 @@ section h2, .contact-section h2 {
   gap: 30px;
 }
 
-/* --- About Section Formatting --- */
-.education-item {
-    padding: 15px 0;
-    border-bottom: 1px dashed #E0E0E0;
-    margin-bottom: 10px;
+.main-nav a {
+  color: var(--light-text);
+  font-weight: 500;
+  padding-bottom: 5px;
+  transition: border-bottom 0.3s;
 }
 
-
-/* --- Skills (Best Structure: Grid Layout) --- */
-.skills-group-container {
-    /* Use CSS Grid to organize skills into a clean, two-column layout */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 30px;
+.main-nav a:hover {
+  border-bottom: 2px solid var(--primary-color);
+  color: var(--light-text);
 }
 
-.skills-group {
-    background-color: var(--surface-color);
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Clean definition */
-    border-top: 4px solid var(--primary-color); /* Section accent */
+.contact-info-header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
-.skills-group h3 {
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    font-size: 1.4em;
-    border-bottom: 1px solid #E0E0E0;
-    padding-bottom: 5px;
+.contact-info-header .phone-number {
+  font-weight: bold;
+}
+
+/* --- Skills & Projects (Card Layout) --- */
+.skills-group, .project-card {
+  background-color: var(--light-text);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.skills-section .skills-group {
+  display: flex;
+  flex-direction: column;
 }
 
 .skills-group ul {
-    padding-left: 20px;
-    list-style-type: '» ';
-    color: var(--secondary-text);
-}
-
-
-/* --- Projects (Elevated Cards) --- */
-.project-card {
-    background-color: var(--surface-color);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
-    margin-bottom: 35px;
-    border-left: 5px solid var(--primary-color); /* Side accent */
+  padding-left: 20px;
+  list-style-type: disc;
 }
 
 .project-card h3 {
-  color: var(--text-color);
+  color: var(--primary-color);
   margin-bottom: 5px;
-  font-size: 1.6em;
-  font-weight: 700;
 }
-
-.project-card .project-tech {
-    color: var(--secondary-text);
-    margin-bottom: 15px;
-    font-style: italic;
-}
-
 
 /* --- Footer --- */
 .footer-section {
-  background-color: var(--surface-color);
-  border-top: 1px solid #E0E0E0;
-  color: var(--secondary-text);
+  background-color: var(--text-color);
+  color: var(--secondary-color);
   text-align: center;
-  padding: 25px;
-  font-size: 0.85em;
+  padding: 20px;
+  margin-top: auto; /* Pushes the footer to the bottom */
 }
 
-
-/* --- Responsive Design --- */
+/* --- Responsive Design (Minimal) --- */
 @media (max-width: 768px) {
   .header-section {
     flex-direction: column;
-    padding: 15px 20px;
-    position: static;
+    text-align: center;
+    gap: 15px;
   }
-  
-  body {
-    padding-top: 0;
+
+  .main-nav ul, .contact-info-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
   }
-  .skills-group-container {
-    grid-template-columns: 1fr; /* Stack skills vertically on small screens */
+
+  section h2, .contact-section h2 {
+    font-size: 2em;
   }
 }
