@@ -1,4 +1,4 @@
-/* src/App.css */
+/* src/App.css - Dashboard Layout and Elevated Cards */
 
 .portfolio-app {
   display: flex;
@@ -10,112 +10,161 @@ main {
   flex-grow: 1;
 }
 
-/* --- Section Layouts --- */
+/* --- Section Layouts & Containers --- */
 section, .contact-section {
-  padding: 40px 20px;
+  padding: 60px 20px;
   max-width: var(--max-width);
   margin: 0 auto;
+  min-height: 400px; /* Ensures sections have visible height */
 }
 
 section h2, .contact-section h2 {
   text-align: center;
-  font-size: 2.5em;
+  font-size: 3em;
   color: var(--primary-color);
-  margin-bottom: 40px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #ccc;
+  margin-bottom: 50px;
+  position: relative;
 }
 
-/* --- Header & Navigation --- */
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+
+/* --- Header (Sticky Navbar) --- */
 .header-section {
-  background-color: var(--text-color);
+  background-color: var(--surface-color);
   color: var(--light-text);
-  padding: 20px 40px;
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+  /* Sticky properties */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .header-section h1 {
-  font-size: 1.8em;
-  font-weight: 600;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--text-color);
 }
 
 .main-nav ul {
   display: flex;
-  gap: 30px;
+  gap: 25px;
 }
 
 .main-nav a {
-  color: var(--light-text);
+  color: var(--text-color);
   font-weight: 500;
-  padding-bottom: 5px;
-  transition: border-bottom 0.3s;
+  padding: 5px 10px;
+  border-radius: 4px;
 }
 
 .main-nav a:hover {
-  border-bottom: 2px solid var(--primary-color);
-  color: var(--light-text);
+  background-color: rgba(76, 175, 80, 0.2); /* Soft hover background */
+  color: var(--primary-color);
 }
 
-.contact-info-header {
-  display: flex;
-  gap: 20px;
-  align-items: center;
+.contact-info-header a {
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    margin-left: 10px;
 }
-
 .contact-info-header .phone-number {
-  font-weight: bold;
+    color: var(--secondary-text);
 }
 
-/* --- Skills & Projects (Card Layout) --- */
-.skills-group, .project-card {
-  background-color: var(--light-text);
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+
+/* --- Skills & Projects (Dashboard Card Look) --- */
+
+/* Skills Group Layout */
+.skills-section h3 {
+    color: var(--primary-color);
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #4A4A4A;
+}
+
+.skills-group {
+    background-color: var(--surface-color);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Elevated shadow */
+    margin-bottom: 25px;
 }
 
 .skills-section .skills-group {
-  display: flex;
-  flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0;
+    background-color: transparent; /* Remove background from container */
+    box-shadow: none;
 }
 
-.skills-group ul {
-  padding-left: 20px;
-  list-style-type: disc;
+/* Projects Card Layout */
+.projects-section .project-card {
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    border-left: 5px solid var(--primary-color);
 }
 
 .project-card h3 {
   color: var(--primary-color);
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  font-size: 1.8em;
+}
+
+.project-card ul {
+    padding-left: 20px;
+    list-style-type: '— '; /* Custom bullet */
 }
 
 /* --- Footer --- */
 .footer-section {
-  background-color: var(--text-color);
-  color: var(--secondary-color);
+  background-color: #111; /* Even darker footer */
+  color: var(--secondary-text);
   text-align: center;
-  padding: 20px;
-  margin-top: auto; /* Pushes the footer to the bottom */
+  padding: 25px;
+  margin-top: auto;
+  font-size: 0.9em;
 }
 
-/* --- Responsive Design (Minimal) --- */
+/* --- Responsive Design --- */
 @media (max-width: 768px) {
   .header-section {
     flex-direction: column;
     text-align: center;
-    gap: 15px;
+    padding: 15px 20px;
+    position: static; /* Unstick on mobile */
+  }
+  
+  body {
+    padding-top: 0; /* Remove header padding on mobile */
   }
 
-  .main-nav ul, .contact-info-header {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-
-  section h2, .contact-section h2 {
-    font-size: 2em;
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
   }
 }
